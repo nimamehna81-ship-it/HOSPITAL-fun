@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>🏥 Dream Hospital</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<header>
+
+<h1>🏥 Dream Hospital</h1>
+
+<p>Reception & Doctor Role Play</p>
+
+</header>
+
+<div class="container">
+
+<!-- Sidebar -->
+
+<div class="sidebar">
+
+<button id="newPatient">
+➕ New Patient
+</button>
+
+<button id="appointments">
+📅 Appointments
+</button>
+
+<button id="history">
+📂 Patient History
+</button>
+
+<button id="doctorOrders">
+👨‍⚕️ Doctor Orders
+</button>
+
+<button id="prescriptions">
+💊 Prescriptions
+</button>
+
+<button id="billing">
+💳 Billing
+</button>
+
+<hr>
+
+<input
+type="text"
+id="search"
+placeholder="🔍 Search Patient">
+
+<div id="patientList"></div>
+
+</div>
+
+<!-- Main -->
+
+<div class="main">
+
+<h2>Patient Registration</h2>
+
+<input
+type="text"
+id="patientName"
+placeholder="Patient Name">
+
+<input
+type="number"
+id="patientAge"
+placeholder="Age">
+
+<select id="gender">
+
+<option>Male</option>
+
+<option>Female</option>
+
+<option>Other</option>
+
+</select>
+
+<input
+type="text"
+id="phone"
+placeholder="Phone Number">
+
+<textarea
+id="symptoms"
+placeholder="Symptoms"></textarea>
+
+<textarea
+id="doctorNote"
+placeholder="Doctor's Notes"></textarea>
+
+<textarea
+id="prescription"
+placeholder="Prescription"></textarea>
+
+<div class="buttons">
+
+<button id="savePatient">
+💾 Save Patient
+</button>
+
+<button id="clearForm">
+🗑 Clear
+</button>
+
+<button id="printSlip">
+🖨 Print Slip
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
