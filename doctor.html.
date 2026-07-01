@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>👨‍⚕️ Dream Hospital - Doctor</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<header class="header">
+
+<h1>👨‍⚕️ Dream Hospital</h1>
+
+<p>Doctor's Consultation Room</p>
+
+</header>
+
+<div class="container">
+
+<!-- Left Panel -->
+
+<div class="sidebar">
+
+<h2>Today's Queue</h2>
+
+<input
+type="text"
+id="searchPatient"
+placeholder="🔍 Search Patient">
+
+<div id="patientQueue">
+
+<div class="patientCard">
+👤 Sarah Johnson
+</div>
+
+<div class="patientCard">
+👤 Liam Smith
+</div>
+
+<div class="patientCard">
+👤 Emma Brown
+</div>
+
+</div>
+
+</div>
+
+<!-- Main Area -->
+
+<div class="main">
+
+<h2>Patient Record</h2>
+
+<input
+type="text"
+id="patientName"
+placeholder="Patient Name"
+readonly>
+
+<input
+type="number"
+id="patientAge"
+placeholder="Age"
+readonly>
+
+<input
+type="text"
+id="patientID"
+placeholder="Patient ID"
+readonly>
+
+<textarea
+id="symptoms"
+placeholder="Symptoms"></textarea>
+
+<textarea
+id="examination"
+placeholder="Examination Notes"></textarea>
+
+<textarea
+id="diagnosis"
+placeholder="Diagnosis"></textarea>
+
+<textarea
+id="doctorOrders"
+placeholder="Doctor's Orders"></textarea>
+
+<textarea
+id="prescription"
+placeholder="Prescription"></textarea>
+
+<select id="followUp">
+
+<option>No Follow-up</option>
+
+<option>After 3 Days</option>
+
+<option>After 1 Week</option>
+
+<option>After 2 Weeks</option>
+
+<option>After 1 Month</option>
+
+</select>
+
+<div class="buttons">
+
+<button id="saveVisit">
+💾 Save Visit
+</button>
+
+<button id="printPrescription">
+🖨 Print Prescription
+</button>
+
+<button id="sendLab">
+🧪 Send to Lab
+</button>
+
+<button id="sendPharmacy">
+💊 Send to Pharmacy
+</button>
+
+<button id="completeVisit">
+✅ Complete Visit
+</button>
+
+</div>
+
+<h3>Vital Signs</h3>
+
+<input
+type="text"
+placeholder="Temperature">
+
+<input
+type="text"
+placeholder="Blood Pressure">
+
+<input
+type="text"
+placeholder="Heart Rate">
+
+<input
+type="text"
+placeholder="Weight">
+
+<input
+type="text"
+placeholder="Height">
+
+</div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
