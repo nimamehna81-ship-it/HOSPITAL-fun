@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>🧪 Dream Hospital - Laboratory</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<header class="header">
+
+<h1>🧪 Dream Hospital</h1>
+
+<p>Laboratory Department</p>
+
+</header>
+
+<div class="container">
+
+<div class="sidebar">
+
+<h2>Lab Requests</h2>
+
+<input
+type="text"
+id="searchPatient"
+placeholder="🔍 Search Patient">
+
+<div id="patientList">
+
+<div class="patientCard">👤 Sarah Johnson</div>
+<div class="patientCard">👤 Liam Smith</div>
+<div class="patientCard">👤 Emma Brown</div>
+
+</div>
+
+</div>
+
+<div class="main">
+
+<h2>Laboratory Request Form</h2>
+
+<input
+type="text"
+id="patientName"
+placeholder="Patient Name"
+readonly>
+
+<input
+type="text"
+id="patientID"
+placeholder="Patient ID"
+readonly>
+
+<textarea
+id="doctorRequest"
+placeholder="Doctor's Lab Request"
+readonly></textarea>
+
+<h3>Select Tests</h3>
+
+<label><input type="checkbox"> 🩸 Blood Test</label><br>
+<label><input type="checkbox"> 💧 Urine Test</label><br>
+<label><input type="checkbox"> 🦠 COVID Test</label><br>
+<label><input type="checkbox"> 🧬 Blood Sugar</label><br>
+<label><input type="checkbox"> ❤️ ECG</label><br>
+<label><input type="checkbox"> 🩻 X-Ray</label><br>
+
+<h3>Lab Results</h3>
+
+<textarea
+id="labResult"
+placeholder="Enter Test Results"></textarea>
+
+<select id="status">
+
+<option>Pending</option>
+
+<option>In Progress</option>
+
+<option>Completed</option>
+
+</select>
+
+<div class="buttons">
+
+<button id="saveResults">
+💾 Save Results
+</button>
+
+<button id="printReport">
+🖨 Print Report
+</button>
+
+<button id="sendDoctor">
+👨‍⚕️ Send to Doctor
+</button>
+
+</div>
+
+<h3>Today's Lab Queue</h3>
+
+<table>
+
+<tr>
+<th>Patient</th>
+<th>Status</th>
+</tr>
+
+<tr>
+<td>Sarah Johnson</td>
+<td>🟡 Pending</td>
+</tr>
+
+<tr>
+<td>Liam Smith</td>
+<td>🟢 Completed</td>
+</tr>
+
+<tr>
+<td>Emma Brown</td>
+<td>🔵 In Progress</td>
+</tr>
+
+</table>
+
+</div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
