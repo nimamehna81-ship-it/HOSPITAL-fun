@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🏥 Dream Hospital - Reception</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<header class="header">
+<h1>🏥 Dream Hospital</h1>
+<p>Reception Desk</p>
+</header>
+
+<div class="container">
+
+<div class="sidebar">
+
+<h2>Reception</h2>
+
+<button id="newPatient">➕ New Patient</button>
+
+<button id="todayPatients">📋 Today's Patients</button>
+
+<button id="appointments">📅 Appointments</button>
+
+<button id="queue">🎟 Queue</button>
+
+<button id="doctorPage">👨‍⚕️ Send to Doctor</button>
+
+<hr>
+
+<input
+type="text"
+id="search"
+placeholder="🔍 Search Patient">
+
+<div id="patientList"></div>
+
+</div>
+
+<div class="main">
+
+<h2>Patient Registration</h2>
+
+<input
+type="text"
+id="patientID"
+placeholder="Patient ID"
+readonly>
+
+<input
+type="text"
+id="patientName"
+placeholder="Patient Name">
+
+<input
+type="number"
+id="patientAge"
+placeholder="Age">
+
+<select id="gender">
+
+<option>Male</option>
+
+<option>Female</option>
+
+<option>Other</option>
+
+</select>
+
+<input
+type="text"
+id="phone"
+placeholder="Phone Number">
+
+<input
+type="text"
+id="address"
+placeholder="Address">
+
+<select id="department">
+
+<option>General Medicine</option>
+
+<option>Pediatrics</option>
+
+<option>Orthopedics</option>
+
+<option>ENT</option>
+
+<option>Dermatology</option>
+
+<option>Dentist</option>
+
+</select>
+
+<select id="doctor">
+
+<option>Dr. Smith</option>
+
+<option>Dr. Emily</option>
+
+<option>Dr. Alex</option>
+
+<option>Dr. James</option>
+
+</select>
+
+<input
+type="date"
+id="appointmentDate">
+
+<input
+type="time"
+id="appointmentTime">
+
+<textarea
+id="reason"
+placeholder="Reason for Visit"></textarea>
+
+<div class="buttons">
+
+<button id="savePatient">
+💾 Save Patient
+</button>
+
+<button id="printToken">
+🎟 Print Token
+</button>
+
+<button id="clearForm">
+🗑 Clear Form
+</button>
+
+</div>
+
+<h3>Today's Queue</h3>
+
+<table>
+
+<tr>
+
+<th>Token</th>
+
+<th>Patient</th>
+
+<th>Status</th>
+
+</tr>
+
+<tbody id="queueTable">
+
+</tbody>
+
+</table>
+
+</div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
