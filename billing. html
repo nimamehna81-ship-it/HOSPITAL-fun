@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>💳 Dream Hospital - Billing</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<header class="header">
+
+<h1>💳 Dream Hospital</h1>
+
+<p>Billing Department</p>
+
+</header>
+
+<div class="container">
+
+<div class="sidebar">
+
+<h2>Billing Queue</h2>
+
+<input
+type="text"
+id="searchPatient"
+placeholder="🔍 Search Patient">
+
+<div id="billingList">
+
+<div class="patientCard">👤 Sarah Johnson</div>
+
+<div class="patientCard">👤 Liam Smith</div>
+
+<div class="patientCard">👤 Emma Brown</div>
+
+</div>
+
+</div>
+
+<div class="main">
+
+<h2>Patient Billing</h2>
+
+<input
+type="text"
+id="patientID"
+placeholder="Patient ID"
+readonly>
+
+<input
+type="text"
+id="patientName"
+placeholder="Patient Name"
+readonly>
+
+<input
+type="date"
+id="billDate">
+
+<h3>Charges</h3>
+
+<input
+type="number"
+placeholder="Consultation Fee">
+
+<input
+type="number"
+placeholder="Laboratory Fee">
+
+<input
+type="number"
+placeholder="Medicine Fee">
+
+<input
+type="number"
+placeholder="Other Charges">
+
+<input
+type="number"
+id="totalBill"
+placeholder="Total Amount"
+readonly>
+
+<select id="paymentMethod">
+
+<option>Cash</option>
+
+<option>Card</option>
+
+<option>UPI</option>
+
+</select>
+
+<select id="paymentStatus">
+
+<option>Pending</option>
+
+<option>Paid</option>
+
+</select>
+
+<textarea
+id="billingNotes"
+placeholder="Billing Notes"></textarea>
+
+<div class="buttons">
+
+<button id="calculateBill">
+🧮 Calculate Bill
+</button>
+
+<button id="saveBill">
+💾 Save Bill
+</button>
+
+<button id="printReceipt">
+🧾 Print Receipt
+</button>
+
+<button id="completePayment">
+✅ Complete Payment
+</button>
+
+</div>
+
+<h3>Today's Payments</h3>
+
+<table>
+
+<tr>
+
+<th>Patient</th>
+
+<th>Amount</th>
+
+<th>Status</th>
+
+</tr>
+
+<tr>
+
+<td>Sarah Johnson</td>
+
+<td>₹500</td>
+
+<td>✅ Paid</td>
+
+</tr>
+
+<tr>
+
+<td>Liam Smith</td>
+
+<td>₹850</td>
+
+<td>🟡 Pending</td>
+
+</tr>
+
+<tr>
+
+<td>Emma Brown</td>
+
+<td>₹1200</td>
+
+<td>✅ Paid</td>
+
+</tr>
+
+</table>
+
+</div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
