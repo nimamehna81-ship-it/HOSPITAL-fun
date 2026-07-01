@@ -1,0 +1,49 @@
+// Dream Hospital
+// reception.js - Part 1
+
+let patients = JSON.parse(localStorage.getItem("patients")) || [];
+
+const patientList = document.getElementById("patientList");
+const saveBtn = document.getElementById("savePatient");
+const clearBtn = document.getElementById("clearForm");
+const searchBox = document.getElementById("search");
+
+function generateID(){
+    return "PT-" + Date.now();
+}
+
+function renderPatients(list = patients){
+
+    if(!patientList) return;
+
+    patientList.innerHTML = "";
+
+    list.forEach((patient,index)=>{
+
+        const card=document.createElement("div");
+
+        card.className="patientCard";
+
+        card.innerHTML=`
+        <b>${patient.name}</b><br>
+        ${patient.id}
+        `;
+
+        card.onclick=()=>{
+
+            document.getElementById("patientID").value=patient.id;
+            document.getElementById("patientName").value=patient.name;
+            document.getElementById("patientAge").value=patient.age;
+            document.getElementById("gender").value=patient.gender;
+            document.getElementById("phone").value=patient.phone;
+            document.getElementById("address").value=patient.address;
+
+        };
+
+        patientList.appendChild(card);
+
+    });
+
+}
+
+renderPatients();
