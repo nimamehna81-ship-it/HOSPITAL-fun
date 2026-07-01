@@ -1,0 +1,476 @@
+// ===========================
+// Dream Hospital
+// Part 1
+// ===========================
+
+// Load saved patients
+let patients = JSON.parse(localStorage.getItem("patients")) || [];
+
+// Elements
+const patientList = document.getElementById("patientList");
+const saveBtn = document.getElementById("savePatient");
+const search = document.getElementById("search");
+
+// Generate Patient ID
+function generateID(){
+
+return "PT" + Math.floor(Math.random()*90000+10000);
+
+}
+
+// Show Patient List
+function displayPatients(list = patients){
+
+if(!patientList) return;
+
+patientList.innerHTML="";
+
+list.forEach(patient=>{
+
+const div=document.createElement("div");
+
+div.className="patientCard";
+
+div.innerHTML=`
+<b>${patient.name}</b><br>
+${patient.id}
+`;
+
+div.onclick=()=>{
+
+document.getElementById("patientID").value=patient.id;
+document.getElementById("patientName").value=patient.name;
+document.getElementById("patientAge").value=patient.age;
+document.getElementById("gender").value=patient.gender;
+document.getElementById("phone").value=patient.phone;
+document.getElementById("address").value=patient.address;
+
+};
+
+patientList.appendChild(div);
+
+});
+
+}
+
+// Save Patient
+if(saveBtn){
+
+saveBtn.onclick=()=>{
+
+const patient={
+
+id:generateID(),
+
+name:document.getElementById("patientName").value,
+
+age:document.getElementById("patientAge").value,
+
+gender:document.getElementById("gender").value,
+
+phone:document.getElementById("phone").value,
+
+address:document.getElementById("address").value
+
+};
+
+if(patient.name==""){
+
+alert("Enter patient name.");
+
+return;
+
+}
+
+patients.push(patient);
+
+localStorage.setItem("patients",JSON.stringify(patients));
+
+displayPatients();
+
+alert("Patient Saved!");
+
+};
+
+}
+
+// Search
+if(search){
+
+search.addEventListener("input",()=>{
+
+const value=search.value.toLowerCase();
+
+const filtered=patients.filter(p=>
+
+p.name.toLowerCase().includes(value) ||
+
+p.id.toLowerCase().includes(value)
+
+);
+
+displayPatients(filtered);
+
+});
+
+}
+
+// Load
+displayPatients();
+// ===========================
+// Dream Hospital
+// Part 2 - Queue & Appointments
+// ===========================
+
+let queue = JSON.parse(localStorage.getItem("queue")) || [];
+
+const queueTable = document.getElementById("queueTable");
+
+// Generate Token Number
+function generateToken(){
+    return "T" + String(queue.length + 1).padStart(3,"0");
+}
+
+// Update Queue Table
+function displayQueue(){
+
+    if(!queueTable) return;
+
+    queueTable.innerHTML="";
+
+   // ===========================
+// Dream Hospital
+// Part 3 - Doctor Orders
+// ===========================
+
+// Load doctor records
+let doctorRecords = JSON.parse(localStorage.getItem("doctorRecords")) || [];
+
+const saveVisitBtn = document.getElementById("saveVisit");
+
+if(saveVisitBtn){
+
+saveVisitBtn.onclick = ()=>{
+
+const patient = document.getElementById("patientName").value;
+
+if(patient==""){
+
+alert("Select a patient first.");
+
+return;
+
+}
+
+const visit = {
+
+name: patient,
+
+symptoms: document.getElementById("symptoms").value,
+
+examination: document.getElementById("examination").value,
+
+diagnosis: document.getElementById("diagnosis").value,
+
+doctorOrders: document.getElementById("doctorOrders").value,
+
+prescription: document.getElementById("prescription").value,
+
+followUp: document.getElementById("followUp").value,
+
+date: new Date().toLocaleString()
+
+};
+
+doctorRecords.push(visit);
+
+localStorage.setItem("doctorRecords", JSON.stringify(doctorRecords));
+
+alert("Doctor's visit saved successfully!");
+
+};
+
+}
+
+// Print Prescription
+const printPrescriptionBtn = document.getElementById("printPrescription");
+
+if(printPrescriptionBtn){
+
+printPrescriptionBtn.onclick = ()=>{
+
+window.print();
+
+};
+
+}
+
+// Complete Visit
+const completeVisitBtn = document.getElementById("completeVisit");
+
+if(completeVisitBtn){
+
+completeVisitBtn.onclick = ()=>{
+
+alert("Patient consultation completed.");
+
+};
+
+}
+
+console
+// ===========================
+// Dream Hospital
+// Part 4 - Pharmacy
+// ===========================
+
+// Load pharmacy data
+let pharmacy = JSON.parse(localStorage.getItem("pharmacy")) || [];
+
+const dispenseBtn = document.getElementById("dispenseMedicine");
+const completeOrderBtn = document.getElementById("completeOrder");
+
+// Dispense Medicine
+if(dispenseBtn){
+
+dispenseBtn.onclick = ()=>{
+
+const patient = document.getElementById("patientName").value;
+
+if(patient==""){
+
+alert("Select a patient first.");
+
+return;
+
+}
+
+pharmacy.push({
+
+name:patient,
+
+date:new Date().toLocaleString(),
+
+status:"Medicines Dispensed"
+
+});
+
+localStorage.setItem("pharmacy",JSON.stringify(pharmacy));
+
+alert("Medicines dispensed successfully!");
+
+};
+
+}
+
+// Complete Pharmacy Order
+if(completeOrderBtn){
+
+completeOrderBtn.onclick = ()=>{
+
+const patient=document.getElementById("patientName").value;
+
+if(patient==""){
+
+alert("Select a patient.");
+
+return;
+
+}
+
+alert("Order completed for "+patient);
+
+};
+
+}
+
+// Print Bill
+const printBillBtn=document.getElementById("printBill");
+
+if(printBillBtn){
+
+printBillBtn.onclick=()=>{
+
+window.print();
+
+};
+
+}
+
+// Load Pharmacy Records
+console.log("Pharmacy Records Loaded:",pharmacy);
+// ===========================
+// Dream Hospital
+// Part 5 - Laboratory
+// ===========================
+
+// Load Lab Records
+
+let labRecords = JSON.parse(localStorage.getItem("labRecords")) || [];
+
+const saveResultsBtn = document.getElementById("saveResults");
+const sendDoctorBtn = document.getElementById("sendDoctor");
+const printReportBtn = document.getElementById("printReport");
+
+// Save Lab Results
+
+if(saveResultsBtn){
+
+saveResultsBtn.onclick=()=>{
+
+const patient=document.getElementById("patientName").value;
+
+if(patient==""){
+
+alert("Select a patient first.");
+
+return;
+
+}
+
+const result={
+
+patient:patient,
+
+patientID:document.getElementById("patientID").value,
+
+doctorRequest:document.getElementById("doctorRequest").value,
+
+labResult:document.getElementById("labResult").value,
+
+status:document.getElementById("status").value,
+
+date:new Date().toLocaleString()
+
+};
+
+labRecords.push(result);
+
+localStorage.setItem("labRecords",JSON.stringify(labRecords));
+
+alert("Lab results saved successfully!");
+
+};
+
+}
+
+// Send Results to Doctor
+
+if(send
+// ===========================
+// Dream Hospital
+// Part 6 - Billing
+// ===========================
+
+// Load Billing Records
+
+let bills = JSON.parse(localStorage.getItem("bills")) || [];
+
+const calculateBtn = document.getElementById("calculateBill");
+const saveBillBtn = document.getElementById("saveBill");
+const completePaymentBtn = document.getElementById("completePayment");
+const printReceiptBtn = document.getElementById("printReceipt");
+
+// Calculate Total Bill
+
+if(calculateBtn){
+
+calculateBtn.onclick=()=>{
+
+const consultation=Number(document.querySelectorAll("input[type='number']")[1]?.value)||0;
+
+const laboratory=Number(document.querySelectorAll("input[type='number']")[2]?.value)||0;
+
+const medicine=Number(document.querySelectorAll("input[type='number']")[3]?.value)||0;
+
+const other=Number(document.querySelectorAll("input[type='number']")[4]?.value)||0;
+
+const total=consultation+laboratory+medicine+other;
+
+document.getElementById("totalBill").value=total;
+
+};
+
+}
+
+// Save Bill
+
+if(saveBillBtn){
+
+saveBillBtn.onclick=()=>{
+
+const bill={
+
+patientID:document.getElementById("patientID").value,
+
+patientName:document.getElementById("patientName").value,
+
+date:document.getElementById("billDate").value,
+
+total:document.getElementById("totalBill").value,
+
+paymentMethod:document.getElementById("paymentMethod").value,
+
+paymentStatus:document.getElementById("paymentStatus").value,
+
+notes:document.getElementById("billingNotes").value
+
+};
+
+bills.push(bill);
+
+localStorage.setItem("bills",JSON.stringify(bills));
+
+alert("Bill saved successfully!");
+
+};
+
+}
+
+// Complete Payment
+
+if(completePaymentBtn){
+
+completePaymentBtn.onclick=()=>{
+
+document.getElementById("paymentStatus
+// ===========================
+// Dream Hospital
+// Part 7 - Navigation & Patient Flow
+// ===========================
+
+// Shared Current Patient
+let currentPatient = JSON.parse(localStorage.getItem("currentPatient")) || null;
+
+// Send Patient to Another Department
+function sendPatient(department){
+
+    if(!currentPatient){
+
+        alert("No patient selected.");
+
+        return;
+
+    }
+
+    currentPatient.department = department;
+
+    localStorage.setItem("currentPatient",JSON.stringify(currentPatient));
+
+    alert(
+        currentPatient.name +
+        " has been sent to " +
+        department + "."
+    );
+
+}
+
+// Reception → Doctor
+const doctorPageBtn=document.getElementById("doctorPage");
+
+if(doctorPageBtn){
+
+doctorPageBtn.onclick=()=>{
+
+const patientName
+
