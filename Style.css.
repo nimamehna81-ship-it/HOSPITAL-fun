@@ -1,0 +1,179 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:#eef6fb;
+color:#333;
+}
+
+.header{
+background:#1976d2;
+color:white;
+padding:20px;
+text-align:center;
+box-shadow:0 4px 10px rgba(0,0,0,.15);
+}
+
+.header h1{
+font-size:32px;
+margin-bottom:5px;
+}
+
+.header p{
+font-size:16px;
+}
+
+.container{
+display:flex;
+min-height:100vh;
+}
+
+.sidebar{
+width:280px;
+background:white;
+padding:20px;
+box-shadow:2px 0 10px rgba(0,0,0,.08);
+overflow-y:auto;
+}
+
+.sidebar h2{
+margin-bottom:15px;
+color:#1976d2;
+}
+
+.sidebar button{
+width:100%;
+padding:12px;
+margin-bottom:10px;
+border:none;
+border-radius:10px;
+background:#2196f3;
+color:white;
+font-size:16px;
+cursor:pointer;
+transition:.3s;
+}
+
+.sidebar button:hover{
+background:#1565c0;
+}
+
+.sidebar input{
+width:100%;
+padding:12px;
+margin-top:10px;
+margin-bottom:15px;
+border:1px solid #ccc;
+border-radius:10px;
+}
+
+.patientCard{
+background:#f5f9ff;
+padding:12px;
+border-radius:10px;
+margin-bottom:10px;
+cursor:pointer;
+transition:.3s;
+border-left:5px solid #2196f3;
+}
+
+.patientCard:hover{
+background:#e3f2fd;
+transform:translateX(5px);
+}
+
+.main{
+flex:1;
+padding:30px;
+}
+
+.main h2{
+color:#1976d2;
+margin-bottom:20px;
+}
+
+.main input,
+.main select,
+.main textarea{
+width:100%;
+padding:12px;
+margin-bottom:15px;
+border:1px solid #ccc;
+border-radius:10px;
+font-size:15px;
+}
+
+.main textarea{
+min-height:100px;
+resize:vertical;
+}
+
+.buttons{
+display:flex;
+flex-wrap:wrap;
+gap:10px;
+margin-top:10px;
+margin-bottom:20px;
+}
+
+.buttons button{
+padding:12px 20px;
+border:none;
+border-radius:10px;
+background:#1976d2;
+color:white;
+cursor:pointer;
+font-size:15px;
+transition:.3s;
+}
+
+.buttons button:hover{
+background:#0d47a1;
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+background:white;
+margin-top:20px;
+}
+
+table th{
+background:#1976d2;
+color:white;
+padding:12px;
+}
+
+table td{
+padding:12px;
+border:1px solid #ddd;
+text-align:center;
+}
+
+@media(max-width:768px){
+
+.container{
+flex-direction:column;
+}
+
+.sidebar{
+width:100%;
+}
+
+.main{
+padding:15px;
+}
+
+.buttons{
+flex-direction:column;
+}
+
+.buttons button{
+width:100%;
+}
+
+}
